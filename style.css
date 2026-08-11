@@ -1,0 +1,841 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background: #090909;
+    color: #f4f0e8;
+    font-family: "Montserrat", sans-serif;
+    overflow-x: hidden;
+}
+
+img {
+    width: 100%;
+    display: block;
+}
+
+button {
+    font-family: inherit;
+}
+
+
+/* =================================
+   GENERAL
+================================= */
+
+.section {
+    min-height: 100vh;
+    padding: 150px 0;
+}
+
+.container {
+    width: min(1100px, 88%);
+    margin: auto;
+}
+
+.center {
+    text-align: center;
+}
+
+.small-text {
+    font-size: 11px;
+    letter-spacing: 5px;
+    text-transform: uppercase;
+    opacity: .5;
+}
+
+.body-text {
+    max-width: 750px;
+    margin: 55px auto;
+
+    font-family: "Cormorant Garamond", serif;
+
+    font-size: clamp(28px, 4vw, 52px);
+
+    line-height: 1.15;
+}
+
+.big-text {
+    margin-top: 35px;
+
+    font-family: "Cormorant Garamond", serif;
+
+    font-size: clamp(48px, 7vw, 95px);
+
+    font-weight: 400;
+
+    line-height: 1.02;
+}
+
+.space {
+    height: 100px;
+}
+
+
+/* =================================
+   MUSIC
+================================= */
+
+.music-btn {
+    position: fixed;
+
+    top: 25px;
+    right: 25px;
+
+    width: 68px;
+    height: 68px;
+
+    z-index: 1000;
+
+    border-radius: 50%;
+
+    border: 1px solid rgba(255,255,255,.2);
+
+    background: rgba(0,0,0,.35);
+
+    backdrop-filter: blur(12px);
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    gap: 4px;
+
+    cursor: pointer;
+
+    transition: .4s;
+}
+
+.music-btn:hover {
+    transform: scale(1.08);
+}
+
+.music-btn span {
+    width: 2px;
+    height: 13px;
+
+    background: #fff;
+
+    animation: musicBars 1s infinite alternate;
+}
+
+.music-btn span:nth-child(2) {
+    height: 20px;
+    animation-delay: .2s;
+}
+
+.music-btn span:nth-child(3) {
+    height: 16px;
+    animation-delay: .4s;
+}
+
+.music-btn small {
+    position: absolute;
+
+    bottom: -21px;
+
+    font-size: 8px;
+
+    letter-spacing: 2px;
+
+    opacity: .4;
+}
+
+.music-btn.paused span {
+    animation-play-state: paused;
+}
+
+@keyframes musicBars {
+
+    from {
+        transform: scaleY(.45);
+    }
+
+    to {
+        transform: scaleY(1.25);
+    }
+
+}
+
+
+/* =================================
+   HERO
+================================= */
+
+.hero {
+    min-height: 100vh;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    text-align: center;
+
+    background:
+        radial-gradient(
+            circle at center,
+            #27231e 0%,
+            #090909 58%
+        );
+}
+
+.hero-content {
+    width: min(950px, 90%);
+}
+
+.eyebrow {
+    margin-bottom: 35px;
+
+    text-transform: uppercase;
+
+    letter-spacing: 5px;
+
+    font-size: 10px;
+
+    opacity: .45;
+}
+
+.hero-title {
+    font-family: "Cormorant Garamond", serif;
+
+    font-size: clamp(55px, 9vw, 125px);
+
+    font-weight: 400;
+
+    line-height: .92;
+}
+
+.scroll-indicator {
+    margin-top: 100px;
+}
+
+.scroll-indicator span {
+    display: block;
+
+    width: 1px;
+    height: 60px;
+
+    margin: auto;
+
+    background: rgba(255,255,255,.45);
+}
+
+.scroll-indicator p {
+    margin-top: 15px;
+
+    font-size: 8px;
+
+    text-transform: uppercase;
+
+    letter-spacing: 4px;
+
+    opacity: .35;
+}
+
+
+/* =================================
+   INTRO
+================================= */
+
+.intro {
+    background: #eee9e0;
+    color: #171615;
+}
+
+
+/* =================================
+   APPRECIATION
+================================= */
+
+.appreciation {
+    background: #11100f;
+}
+
+.center-title {
+    text-align: center;
+
+    margin-bottom: 120px;
+}
+
+.center-title h2 {
+    margin-top: 25px;
+
+    font-family: "Cormorant Garamond", serif;
+
+    font-size: clamp(50px, 8vw, 100px);
+
+    font-weight: 400;
+}
+
+.appreciation-card {
+    width: 75%;
+
+    min-height: 330px;
+
+    margin: 0 auto 100px;
+
+    padding: 60px 50px;
+
+    border-top: 1px solid rgba(255,255,255,.18);
+}
+
+.appreciation-card.reverse {
+    margin-left: auto;
+    margin-right: 0;
+}
+
+.card-number {
+    font-size: 10px;
+
+    letter-spacing: 4px;
+
+    opacity: .3;
+}
+
+.appreciation-card h3 {
+    margin-top: 70px;
+
+    font-family: "Cormorant Garamond", serif;
+
+    font-size: clamp(42px, 6vw, 75px);
+
+    font-weight: 400;
+}
+
+.appreciation-card p {
+    margin-top: 20px;
+
+    max-width: 600px;
+
+    font-family: "Cormorant Garamond", serif;
+
+    font-size: 29px;
+
+    opacity: .6;
+}
+
+
+/* =================================
+   REALIZATION
+================================= */
+
+.realization {
+    background: #101010;
+
+    text-align: center;
+}
+
+.big-statement {
+    max-width: 1000px;
+
+    margin: 80px auto;
+
+    font-family: "Cormorant Garamond", serif;
+
+    font-size: clamp(50px, 8vw, 105px);
+
+    font-weight: 400;
+
+    line-height: .98;
+}
+
+.line {
+    width: 1px;
+
+    height: 100px;
+
+    margin: 100px auto;
+
+    background: rgba(255,255,255,.3);
+}
+
+.qualities {
+    margin-top: 120px;
+}
+
+.qualities p {
+    margin: 45px 0;
+
+    font-family: "Cormorant Garamond", serif;
+
+    font-size: clamp(32px, 5vw, 62px);
+}
+
+
+/* =================================
+   FUTURE
+================================= */
+
+.future {
+    background: #ddd7cd;
+
+    color: #151413;
+}
+
+.chapter {
+    width: fit-content;
+
+    margin: 150px auto 0;
+
+    display: flex;
+
+    flex-direction: column;
+
+    line-height: .8;
+
+    font-family: "Cormorant Garamond", serif;
+}
+
+.chapter span {
+    font-size: 28px;
+
+    letter-spacing: 9px;
+}
+
+.chapter strong {
+    font-size: clamp(85px, 18vw, 230px);
+
+    font-weight: 400;
+}
+
+
+/* =================================
+   FUTURE LIST
+================================= */
+
+.future-list {
+    background: #121212;
+}
+
+.future-item {
+    display: flex;
+
+    align-items: baseline;
+
+    padding: 45px 0;
+
+    border-bottom: 1px solid rgba(255,255,255,.14);
+}
+
+.future-item span {
+    width: 80px;
+
+    font-size: 9px;
+
+    letter-spacing: 2px;
+
+    opacity: .3;
+}
+
+.future-item p {
+    font-family: "Cormorant Garamond", serif;
+
+    font-size: clamp(30px, 5vw, 60px);
+}
+
+.final-future {
+    margin-top: 180px;
+
+    text-align: center;
+
+    font-family: "Cormorant Garamond", serif;
+
+    font-size: clamp(60px, 10vw, 130px);
+
+    line-height: .9;
+}
+
+.final-future strong {
+    font-weight: 400;
+
+    opacity: .4;
+}
+
+
+/* =================================
+   TRANSITION
+================================= */
+
+.transition {
+    min-height: 100vh;
+
+    background: #000;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    text-align: center;
+}
+
+.transition-content {
+    width: 90%;
+}
+
+.transition-line {
+    margin: 60px 0;
+
+    font-family: "Cormorant Garamond", serif;
+
+    font-size: clamp(42px, 7vw, 95px);
+}
+
+
+/* =================================
+   WEDDING
+================================= */
+
+.wedding {
+    position: relative;
+
+    min-height: 100vh;
+
+    padding: 120px 5%;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    overflow: hidden;
+
+    background: #080808;
+}
+
+.wedding-glow {
+    position: absolute;
+
+    width: 700px;
+    height: 700px;
+
+    border-radius: 50%;
+
+    background: rgba(255,255,255,.05);
+
+    filter: blur(100px);
+}
+
+.wedding-content {
+    position: relative;
+
+    width: min(900px, 100%);
+
+    text-align: center;
+}
+
+.wedding-image {
+    width: 100%;
+    max-width: 800px;
+
+    margin: 55px auto;
+
+    overflow: hidden;
+
+    transform: translateY(0);
+
+    transition:
+        opacity 1.5s ease,
+        transform 1.5s cubic-bezier(.16,1,.3,1);
+}
+
+.wedding-image img {
+    width: 100%;
+
+    max-height: 850px;
+
+    object-fit: cover;
+
+    filter: saturate(.9);
+}
+
+.wedding-text {
+    font-family: "Cormorant Garamond", serif;
+
+    font-size: clamp(30px, 5vw, 62px);
+
+    line-height: 1.1;
+}
+
+.wedding-text p {
+    margin: 35px 0;
+}
+
+
+/* =================================
+   FINAL
+================================= */
+
+.final {
+    background: #eee9e0;
+
+    color: #171615;
+
+    display: flex;
+
+    align-items: center;
+}
+
+.final-title {
+    font-family: "Cormorant Garamond", serif;
+
+    font-size: clamp(70px, 13vw, 170px);
+
+    line-height: .84;
+}
+
+.final-title p:nth-child(2) {
+    opacity: .6;
+}
+
+.final-title p:nth-child(3) {
+    opacity: .3;
+}
+
+.last-button {
+    margin-top: 150px;
+
+    padding: 20px 45px;
+
+    background: transparent;
+
+    border: 1px solid rgba(0,0,0,.4);
+
+    cursor: pointer;
+
+    text-transform: uppercase;
+
+    letter-spacing: 4px;
+
+    transition: .4s;
+}
+
+.last-button:hover {
+    background: #171615;
+
+    color: #eee9e0;
+}
+
+
+/* =================================
+   LETTER
+================================= */
+
+.letter {
+    min-height: 100vh;
+
+    padding: 150px 0;
+
+    background:
+        radial-gradient(
+            circle at top,
+            #292621,
+            #090909 60%
+        );
+}
+
+.letter-container {
+    width: min(850px, 88%);
+
+    margin: auto;
+}
+
+.letter-small {
+    font-size: 13px;
+
+    letter-spacing: 5px;
+
+    opacity: .45;
+}
+
+.letter-title {
+    margin-top: 40px;
+
+    font-family: "Cormorant Garamond", serif;
+
+    font-size: clamp(80px, 14vw, 170px);
+
+    font-weight: 400;
+}
+
+.letter-body {
+    margin-top: 100px;
+
+    font-family: "Cormorant Garamond", serif;
+
+    font-size: clamp(30px, 4vw, 48px);
+
+    line-height: 1.15;
+}
+
+.letter-body p {
+    margin: 30px 0;
+}
+
+.signature {
+    margin-top: 150px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    font-family: "Cormorant Garamond", serif;
+
+    font-size: 32px;
+}
+
+.signature strong {
+    margin-top: 25px;
+
+    font-size: 55px;
+
+    font-weight: 400;
+}
+
+
+/* =================================
+   FOOTER
+================================= */
+
+footer {
+    padding: 40px;
+
+    background: #050505;
+
+    text-align: center;
+
+    font-size: 8px;
+
+    letter-spacing: 3px;
+
+    text-transform: uppercase;
+
+    opacity: .3;
+}
+
+
+/* =================================
+   REVEAL
+================================= */
+
+.reveal {
+    opacity: 0;
+
+    transform: translateY(50px);
+
+    transition:
+        opacity 1.2s ease,
+        transform 1.2s cubic-bezier(.16,1,.3,1);
+}
+
+.reveal.visible {
+    opacity: 1;
+
+    transform: translateY(0);
+}
+
+
+/* =================================
+   HERO REVEAL
+================================= */
+
+.hero-reveal {
+    opacity: 0;
+
+    transform: translateY(30px);
+
+    transition:
+        opacity 1.5s ease,
+        transform 1.5s cubic-bezier(.16,1,.3,1);
+}
+
+.hero-reveal.visible {
+    opacity: 1;
+
+    transform: translateY(0);
+}
+
+.delay-1 {
+    transition-delay: .25s;
+}
+
+.delay-2 {
+    transition-delay: .5s;
+}
+
+
+/* =================================
+   MOBILE
+================================= */
+
+@media (max-width: 700px) {
+
+    .section {
+        padding: 100px 0;
+    }
+
+    .container {
+        width: 88%;
+    }
+
+    .hero-title {
+        font-size: 55px;
+    }
+
+    .music-btn {
+        width: 55px;
+        height: 55px;
+
+        top: 15px;
+        right: 15px;
+    }
+
+    .appreciation-card,
+    .appreciation-card.reverse {
+        width: 100%;
+
+        margin-bottom: 60px;
+
+        padding: 40px 20px;
+    }
+
+    .appreciation-card h3 {
+        margin-top: 50px;
+    }
+
+    .future-item {
+        padding: 30px 0;
+    }
+
+    .future-item span {
+        width: 45px;
+    }
+
+    .future-item p {
+        font-size: 31px;
+    }
+
+    .wedding {
+        padding: 100px 5%;
+    }
+
+    .wedding-image {
+        margin: 40px auto;
+    }
+
+    .letter {
+        padding: 100px 0;
+    }
+
+}
